@@ -25,20 +25,6 @@
 
 }
 
-.image, .info{
-    position: absolute;
-    padding-top: 7%;
-}
-
-
-
-img{
-    border-radius: 10px;
-    height: 30vh;
-}
-
-
-
 .prev, .next{
     cursor: pointer;
     position: absolute;
@@ -62,15 +48,13 @@ img{
     background-color: rgba(0,0,0,0.8);
 }
 
-
-.fade{
-    display: flex;
-    width: 80%;
-    min-width: 500px;
-}
-
-.slidecontainer {
-    width: 100%; /* Width of the outside container */
+#scroll_bar {
+    z-index: 3;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 /* The slider itself */
@@ -79,11 +63,12 @@ img{
     appearance: none;
     width: 100%; /* Full-width */
     height: 25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
+    background: none; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+    z-index: 3;
 }
 
 /* Mouse-over effects */
@@ -106,4 +91,38 @@ img{
     height: 25px; /* Slider handle height */
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
+}
+
+.image_container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+.layer1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.layer2 {
+    position: relative;
+}
+
+img{
+    border-radius: 10px;
+    height: 30vh;
+}
+
+.moveable {
+    position: relative;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(0%,0%);
+    overflow: hidden;
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles/medias/481-650.css">
     <link rel="stylesheet" href="styles/medias/651-767.css">
     <link rel="stylesheet" href="styles/medias/_992-1199.css">
-    <link rel="stylesheet" href="styles/medias/_1200<.css">
+    <link rel="stylesheet" href="styles/medias/_1200.css">
     <link rel="stylesheet" href="styles/medias/768-991.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -19,52 +19,18 @@
 </head>
 
 <body>
-    <!-- <div class="parent" id="loadingScreen">
-        <div id="loader">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-    </div> -->
-    <div class="main"></div>
+    <div class="main">
         <div class="slideshow-container">
-            <div class="slides fade">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                <div class="image">
-                    <img src="img/slider1.jpeg" alt="" style="width: 100%">
-                </div>
 
-                <div class="info">
-                    <img src="img/slider3.jpeg" alt="" style="width: 100%">
+            <div class="image_container">
+                <div id="scroll_bar">
+                    <input type="range" min="0" max="100" value="100" class="slider" id="myRange">
                 </div>
-            </div>
-           
-
-            <!-- <div class="slides fade">
-                <div class="image">
-                    <img src="img/slider2.jpeg" alt="" style="width: 100%">
-                </div>   
-                
-                <div class="info">
-                    <img src="img/slider1.jpeg" alt="" style="width: 100%">
+                <img class="layer1" src="img/slider2.jpeg" />
+                <div class="moveable">
+                    <img class="layer2" src="img/slider1.jpeg" />
                 </div>
             </div>
-            
-
-            <div class="slides fade">
-                <div class="image">
-                    <img src="img/slider3.jpeg" alt="" style="width: 100%">
-                </div>      
-
-                <div class="info">
-                    <img src="img/slider2.jpeg" alt="" style="width: 100%">
-                </div>
-            </div> -->
         </div>
         <a class="prev" onclick="plus_slide(-1)">&#10094</a>
         <a class="next" onclick="plus_slide(1)">&#10095</a>
