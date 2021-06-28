@@ -17,6 +17,10 @@ data.count = 3;
 
 let onLoad = async () =>
 {
+    let wrapper =
+    `<div class="blog-slider__item swiper-slide">
+        <iframe onload="loaded()" src="module.html?_uid=${iframe}"></iframe>
+    </div>`;
     let _uid = parser.getUid();
 
     if (_uid)
@@ -25,10 +29,7 @@ let onLoad = async () =>
 
         for (let iframe of data.iframes)
         {
-            $(".swiper-wrapper").append(
-                `<div class="blog-slider__item swiper-slide">
-                    <iframe onload="loaded()" src="module.html?_uid=${iframe}"></iframe>
-                </div>`);
+            $(".swiper-wrapper").append(wrapper);
         }
     }
     else
