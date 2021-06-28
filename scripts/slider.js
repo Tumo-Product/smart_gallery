@@ -5,7 +5,7 @@ $(document).ready(function () {
         compSlider.each(function () {
             let compSliderWidth = $(this).width() + "px";
             $(this).find(".resize img").css({ width: compSliderWidth });
-            drags($(this).find(".divider"), $(this).find(".resize"), $(this));
+            drags($(this).find(".bullet"), $(this).find(".resize"), $(this));
         });
 
         $(window).on("resize", function () {
@@ -44,7 +44,7 @@ function drags(dragElement, resizeElement, container) {
             if (e.originalEvent.touches) {
                 moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
             } else {
-                moveX = e.pageX
+                moveX = e.pageX;
             }
             let leftValue = moveX + posX - dragWidth;
 
@@ -54,14 +54,14 @@ function drags(dragElement, resizeElement, container) {
                 leftValue = maxLeft;
             }
 
-            let widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + "%";
+            let widthValue = (leftValue + dragWidth / 2 - containerOffset - 15) * 100 / containerWidth + "%";
 
             $(".draggable").css("left", widthValue).on("mouseup touchend touchcancel", function () {
                 $(this).removeClass("draggable");
                 resizeElement.removeClass("resizable");
             });
 
-            $(".resizable").css("width", widthValue);
+            $(".resizable").css("width", `calc(${widthValue} + 15px)`);
 
         }).on("mouseup touchend touchcancel", function () {
             dragElement.removeClass("draggable");
