@@ -2,16 +2,15 @@ let data;
 
 const onPageLoad = async () =>
 {
-	let _uid = parser.getUid();
+	let _uid   = 	   parser.getUid();
+	let _iuid  = await parser.getIuid();
+	let images = await parser.dataFetch(_uid, _iuid);
+	images = images.data.data;
 
-	if (_uid)
+	if (images != undefined)
 	{
-		data = await parser.dataFetch(_uid);
-
-		$('img').each(function (i)
-		{
-			$(this).attr("src", data[i]);
-		});
+		$("img").eq(0).attr("src", "data:image/png;base64," + images.img1);
+		$("img").eq(1).attr("src", "data:image/png;base64," + images.img2);
 	}
 	else {
 		console.log("uid not found");
