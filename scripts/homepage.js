@@ -20,7 +20,7 @@ let onLoad = async () =>
         for (let i = 0; i < data.images.length; i++)
         {
             let image = data.images[i];
-            addIframe(i, data.images.length, data.uuid, image.iuid);
+            view.addIframe(i, data.images.length, data.uuid, image.iuid);
         }
     }
     else
@@ -41,21 +41,6 @@ let onLoad = async () =>
             clickable: true,
         }
     });
-}
-
-const addIframe = (i, length, _uuid, _iuid) => {
-    let wrapper =
-        `<div class="blog-slider__item swiper-slide swiper-slide-next" role="group" aria-label="${i + 1} / ${length}" style="width: 800px; opacity: 0; transform: translate3d(${-800 * i}px, 0px, 0px);">
-            <iframe onload="loaded()" src="module.html?_uuid=${_uuid}&_iuid=${_iuid}"></iframe>
-        </div>`;
-    
-    let bullet = `<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide ${i + 1}"></span>`;
-
-    if (i != 0) {
-        $(".blog-slider__pagination").append(bullet);
-    }
-    $(".swiper-wrapper").append(wrapper);
-    console.log("added");
 }
 
 const loaded = async () =>

@@ -28,23 +28,3 @@ const parser = {
 		return _iuid;
 	}
 }
-
-let dummyJson = {
-	sets: {
-		name: "firstSet",
-		imageSets: [
-			[
-				"img/slider1.jpg",
-				"img/slider2.jpg",
-			],
-			[
-				"img/slider2.jpg",
-				"img/slider3.jpg",
-			],
-			[
-				"img/slider3.jpg",
-				"img/slider1.jpg",
-			]
-		]
-	}
-}
