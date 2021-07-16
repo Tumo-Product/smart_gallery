@@ -1,6 +1,5 @@
 let iframesLoaded = 0;
 let data = {};
-data.count = 3;
 
 let timer = null;
 
@@ -43,11 +42,10 @@ let onLoad = async () =>
     });
 }
 
-const loaded = async () =>
+function iframeLoaded()
 {
     iframesLoaded++;
 
-    await timeout(2000);
     if (iframesLoaded == data.images.length)
     {
         loader.toggle();
