@@ -62,7 +62,7 @@ const loaded = async () =>
 {
     iframesLoaded++;
 
-    await timeout(1000);
+    await timeout(2000);
     if (iframesLoaded == data.images.length)
     {
         loader.toggle();

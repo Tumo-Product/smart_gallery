@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $(".resize").css("width", "94.8%");
+    $(".bullet").css("left", "92.7%");
+
     if ($(".comparison-slider")[0]) {
         let compSlider = $(".comparison-slider");
 
