@@ -1,6 +1,5 @@
 * {
     overflow: hidden;
-    background-color: #F3F3F3;
 }
 
 body {
@@ -28,10 +27,6 @@ a {
     position: relative;
     color: #a8244f;
     text-decoration: none;
-}
-
-img {
-    
 }
 
 a:before {

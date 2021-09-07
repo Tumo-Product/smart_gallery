@@ -11,11 +11,14 @@ const onPageLoad = async () =>
 	{
 		$("img").eq(0).attr("src", "data:image/png;base64," + images.img2);
 		$("img").eq(1).attr("src", "data:image/png;base64," + images.img1);
-		window.parent.iframeLoaded();
+		if (typeof(window.parent.iframeLoaded) == 'function')
+			window.parent.iframeLoaded();
 	}
 	else {
 		console.log("uid not found");
 	}
+
+	loader.toggle();
 }
 
 $(onPageLoad);
