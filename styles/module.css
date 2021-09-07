@@ -198,6 +198,23 @@ nav.social li:first-child a {
     transition: 0.1s;
 }
 
+.pulseAnimation {
+    background-color: rgb(100, 100, 100);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgb(100, 100, 100);
+    }
+    50% {
+        background-color: rgb(228, 228, 228);
+    }
+    100% {
+        background-color: rgb(100, 100, 100);
+    }
+}
+
 .bullet:active div {
     box-shadow: 2px 2px 2px 0 #FEFEFE, -2px -2px 2px 0 rgba(222,222,230,0.5);
     width: 20px;

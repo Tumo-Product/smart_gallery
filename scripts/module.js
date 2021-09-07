@@ -21,4 +21,9 @@ const onPageLoad = async () =>
 	loader.toggle();
 }
 
+const disableAnimation = () => {
+	$(".bullet div").removeClass("pulseAnimation");
+	$(".bullet").attr("onmousedown", "");
+}
+
 $(onPageLoad);
