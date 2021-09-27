@@ -17,6 +17,8 @@ $(document).ready(function () {
                 $(".bullet").removeClass("bulletAnimation");
                 if (mouseLocation.x < 35) {
                     mouseLocation.x = 35;
+                } else if (mouseLocation.x > 713.781) {
+                    mouseLocation.x = 713.781;
                 }
 
                 $(".resize").css("width", mouseLocation.x);

@@ -251,28 +251,28 @@ nav.social li:first-child a {
 
 @keyframes resizeAnimation {
     0% {
-        width: 60%;
+        width: 69%;
     }
 
     50% {
-        width: 79.3%;
+        width: 88.3%;
     }
 
     100% {
-        width: 60%;
+        width: 69%;
     }
 }
 
 @keyframes bulletAnimation {
     0% {
-        left: 57.4%;
+        left: 66.4%;
     }
 
     50% {
-        left: 76.7%;
+        left: 85.7%;
     }
 
     100% {
-        left: 57.4%;
+        left: 66.4%;
     }
 }
