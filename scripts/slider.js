@@ -1,6 +1,26 @@
+let mouseLocation = {x: -1, y: -1};
+let done = false;
+
 $(document).ready(function () {
-    $(".resize").css("width", "94.8%");
+    $("body").mousemove(function(e) {
+        mouseLocation.x = e.pageX - $(".comparison-slider").offset().left;
+        mouseLocation.y = e.pageY - $(".comparison-slider").offset().top;
+    });
+
+    $(".resize").css("width", "95.3%");
     $(".bullet").css("left", "92.7%");
+
+    $(".comparison-slider").mouseover(function () {
+        if (!done) {
+            setTimeout(() => {
+                $(".resize").removeClass("resizeAnimation");
+                $(".bullet").removeClass("bulletAnimation");
+                $(".resize").css("width", mouseLocation.x);
+                $(".bullet").css("left", mouseLocation.x - 20);
+            }, 100);
+        }
+        done = true;
+    })
 
     if ($(".comparison-slider")[0]) {
         let compSlider = $(".comparison-slider");
@@ -64,14 +84,11 @@ function drags(dragElement, resizeElement, container) {
                 resizeElement.removeClass("resizable");
             });
 
-            $(".resizable").css("width", `calc(${widthValue} + 15px)`);
-
+            $(".resizable").css("width", `calc(${widthValue} + 20px)`);
         }).on("mouseup touchend touchcancel", function () {
             dragElement.removeClass("draggable");
             resizeElement.removeClass("resizable");
-
         });
-
     }).on("mouseup touchend touchcancel", function (e) {
         dragElement.removeClass("draggable");
         resizeElement.removeClass("resizable");
