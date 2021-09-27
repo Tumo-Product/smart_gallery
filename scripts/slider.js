@@ -15,6 +15,10 @@ $(document).ready(function () {
             setTimeout(() => {
                 $(".resize").removeClass("resizeAnimation");
                 $(".bullet").removeClass("bulletAnimation");
+                if (mouseLocation.x < 35) {
+                    mouseLocation.x = 35;
+                }
+
                 $(".resize").css("width", mouseLocation.x);
                 $(".bullet").css("left", mouseLocation.x - 20);
             }, 100);
