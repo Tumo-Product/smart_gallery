@@ -192,6 +192,7 @@ nav.social li:first-child a {
 }
 
 .bullet {
+    box-shadow: -2px -2px 4px 0 #5a5a5a30, 2px 2px 4px #5a5a5a30;
     cursor: pointer;
     margin-right: 15px;
     position: absolute;
