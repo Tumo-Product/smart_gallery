@@ -275,4 +275,5 @@ body {
     width: 743px;
     height: 141px;
     letter-spacing: 0;
+    overflow: auto;
 }
