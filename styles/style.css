@@ -5,6 +5,11 @@
     src: url('../fonts/FedraSansAltPro/FedraSansAltPro-Medium.otf');
 }
 
+@font-face {
+    font-family: FedraBook;
+    src: url('../fonts/FedraSansAltPro/FedraSansAltPro-Book.otf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -242,4 +247,33 @@ body {
         height: 11px;
         width: 30px;
     }
+}
+
+#imageText {
+    display: none;
+    top: 501px;
+    position: absolute;
+    width: 810px;
+    height: 181px;
+    background:#F3F3F3;
+    border-radius: 19px;
+    background-color: #F3F3F3;
+    box-shadow: 4px 4px 4px 0 rgba(222,222,230,0.5), -3px -3px 4px 0 #FEFEFE;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#imageText p{
+    color: #5C7CA6;
+    font-size: 19px;
+    font-family: FedraBook;
+    margin: auto;
+    text-align: center;
+    line-height: 22px;
+    font-weight: 300;
+    width: 743px;
+    height: 141px;
+    overflow: none;
+    letter-spacing: 0;
 }

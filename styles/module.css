@@ -103,6 +103,7 @@ nav.social li:first-child a {
 }
 
 .container {
+    position: absolute;
     padding: 20px;
     box-shadow: 5px 5px 5px 0 rgba(222,222,230,0.5), -3px -3px 5px 0 #FEFEFE;
     border-radius: 19px;

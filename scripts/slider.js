@@ -15,6 +15,15 @@ $(document).ready(function () {
             setTimeout(() => {
                 $(".resize").removeClass("resizeAnimation");
                 $(".bullet").removeClass("bulletAnimation");
+                // TODO: show text if available.
+                
+                if (mouseLocation.x > 385) {
+                    $(`#imageText p`).text(data.firstText);
+                } 
+                else {
+                    $(`#imageText p`).text(data.secondText) ;
+                }
+                
                 if (mouseLocation.x < 35) {
                     mouseLocation.x = 35;
                 } else if (mouseLocation.x > 713.781) {
@@ -91,6 +100,15 @@ function drags(dragElement, resizeElement, container) {
             });
 
             $(".resizable").css("width", `calc(${widthValue} + 20px)`);
+            // TODO: check for width here.
+
+            if ($(".resize").width() > 385) {
+                $(`#imageText p`).text(data.firstText);
+            }
+            else {
+                $(`#imageText p`).text(data.secondText);
+            }
+
         }).on("mouseup touchend touchcancel", function () {
             dragElement.removeClass("draggable");
             resizeElement.removeClass("resizable");

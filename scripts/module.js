@@ -5,15 +5,21 @@ const onPageLoad = async () =>
 	let _uid   = 	   parser.getUid();
 	let _iuid  = await parser.getIuid();
 	let images = await parser.dataFetch(_uid, _iuid);
-	images = images.data.data;
+	data = images.data.data;
 
 	if (images != undefined)
 	{
-		$("img").eq(0).attr("src", images.img2);
-		$("img").eq(1).attr("src", images.img1);
+		$("img").eq(0).attr("src", data.img2);
+		$("img").eq(1).attr("src", data.img1);
 	}
 	else {
 		console.log("uid not found");
+	}
+
+	if (data.firstText !== undefined || images.secondText !== undefined) {
+		$(`.container`).css({"position": "absolute", "top": 30});
+		$(`.shadow`).css({"position": "absolute", "top": 50});
+		$("#imageText").css("display", "flex");
 	}
 
 	loader.toggle();
