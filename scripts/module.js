@@ -9,10 +9,8 @@ const onPageLoad = async () =>
 
 	if (images != undefined)
 	{
-		$("img").eq(0).attr("src", "data:image/png;base64," + images.img2);
-		$("img").eq(1).attr("src", "data:image/png;base64," + images.img1);
-		// if (typeof(window.parent.iframeLoaded) == 'function')
-		// 	window.parent.iframeLoaded();
+		$("img").eq(0).attr("src", images.img2);
+		$("img").eq(1).attr("src", images.img1);
 	}
 	else {
 		console.log("uid not found");
