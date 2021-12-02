@@ -15,6 +15,7 @@ let onLoad = async () =>
     {
         data = await parser.dataFetch(_uid);
         data = data.data.data;
+        document.location = `module.html?_uuid=${_uid}&_iuid=${data.images[0].iuid}`;
 
         for (let i = 0; i < data.images.length; i++)
         {
