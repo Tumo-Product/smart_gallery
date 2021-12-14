@@ -16,6 +16,7 @@ $(document).ready(function () {
                 $(".resize").removeClass("resizeAnimation");
                 $(".bullet").removeClass("bulletAnimation");
                 // TODO: show text if available.
+                $("#imageText img").remove();
                 
                 if (mouseLocation.x > 385) {
                     $(`#imageText p`).text(data.firstText);

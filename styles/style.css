@@ -264,6 +264,12 @@ body {
     padding: 20px;
 }
 
+#imageText img {
+    height: 130.05px;
+    width: 673.61px;
+    position: absolute;
+}
+
 #imageText p{
     color: #5C7CA6;
     font-size: 19px;
