@@ -1,6 +1,24 @@
 let mouseLocation = {x: -1, y: -1};
 let done = false;
 
+jQuery.event.special.touchstart = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+
+jQuery.event.special.touchmove = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+
+jQuery.event.special.touchend = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchend", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+
 $(document).ready(function () {
     $("body").mousemove(function(e) {
         mouseLocation.x = e.pageX - $(".comparison-slider").offset().left;
@@ -117,7 +135,5 @@ function drags(dragElement, resizeElement, container) {
     }).on("mouseup touchend touchcancel", function (e) {
         dragElement.removeClass("draggable");
         resizeElement.removeClass("resizable");
-
     });
-
 }
