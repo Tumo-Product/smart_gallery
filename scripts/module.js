@@ -1,4 +1,5 @@
 let data;
+let imagesLoaded = 0;
 
 const onPageLoad = async () =>
 {
@@ -6,11 +7,15 @@ const onPageLoad = async () =>
 	let _iuid  = await parser.getIuid();
 	let images = await parser.dataFetch(_uid, _iuid);
 	data = images.data.data;
-
+	
+	$("img").each(function() {
+		$(this)[0].onload = loaded;
+	});
+	
 	if (images != undefined)
 	{
-		$("img").eq(0).attr("src", data.img2);
-		$("img").eq(1).attr("src", data.img1);
+		$("img").eq(0)[0].src = data.img2;
+		$("img").eq(1)[0].src = data.img1;
 	}
 	else {
 		console.log("uid not found");
@@ -22,7 +27,14 @@ const onPageLoad = async () =>
 		$("#imageText").css("display", "flex");
 	}
 
-	loader.toggle();
+}
+
+const loaded = () => {
+	imagesLoaded++;
+
+	if (imagesLoaded == 2 ) {
+		loader.toggle();
+	}
 }
 
 const disableAnimation = () => {
